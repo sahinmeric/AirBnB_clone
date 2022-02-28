@@ -10,4 +10,4 @@
 
 <h2>Testing</h2>
 
-<h1>AUTHORS</h1>
+<h2>AUTHORS</h2>
