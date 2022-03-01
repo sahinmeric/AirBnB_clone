@@ -2,7 +2,6 @@
 """
 This script has Base model class
 """
-from pyexpat import model
 import models
 import uuid
 from datetime import datetime
@@ -37,11 +36,11 @@ class BaseModel:
         models.storage.save()
     
     def to_dict(self):
-       """returns a dictionary containing all keys/values of __dict__ of the instance"""
-       dict_upd = {"__class__": self.__class__.__name__}
-       for key in self.__dict__:
-            if key == 'created_at' or key == 'updated_at':
-                dict_upd[key] = self.__dict__[key].isoformat()
-            else:
-                dict_upd[key] = self.__dict__[key]
-            return dict_upd
+        """returns a dictionary containing all keys/values of __dict__ of the instance"""
+        dict_upd = self.__dict__.copy()
+        if "created_at" in dict_upd:
+            dict_upd["created_at"] = dict_upd["created_at"].strftime(format)
+        if "updated_at" in dict_upd:
+            dict_upd["updated_at"] = dict_upd["updated_at"].strftime(format)
+        dict_upd["__class__"] = self.__class__.__name__
+        return dict_upd
