@@ -38,4 +38,10 @@ class BaseModel:
     
     def to_dict(self):
        """returns a dictionary containing all keys/values of __dict__ of the instance"""
-       return self.__dict__
+       dict_upd = {"__class__": self.__class__.__name__}
+       for key in self.__dict__:
+            if key == 'created_at' or key == 'updated_at':
+                dict_upd[key] = self.__dict__[key].isoformat()
+            else:
+                dict_upd[key] = self.__dict__[key]
+            return dict_upd
