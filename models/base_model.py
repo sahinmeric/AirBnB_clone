@@ -11,20 +11,21 @@ format = "%Y-%m-%dT%H:%M:%S.%f"
 class BaseModel:
     """Base model class"""
     def __init__(self, *args, **kwargs):
-        """Initialization"""
+        """Initialization of base model class"""
         if kwargs:
             for k, v in kwargs.items():
-                if k == "created_at" or "updated_at":
-                    setattr(self, k, datetime.strptime(v,format))
-                elif k == "__class__":
-                    continue
-                else:
+                if k != "__class__":
                     setattr(self, k, v)
+            if hasattr(self, "created_at"):
+                self.created_at = datetime.strptime(kwargs["created_at"], format)
+            if hasattr(self, "updated_time"):
+                self.updated_at = datetime.strptime(kwargs["updated_at"], format)
         else:
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
-            self.updated_at = self.created_at #this should be executed when instance first time created
-        models.storage.new(self)
+            self.updated_at = self.created_at
+            models.storage.new(self)
+            models.storage.save()
 
     def __str__(self) -> str:
         """String presentation of BaseModel class"""
