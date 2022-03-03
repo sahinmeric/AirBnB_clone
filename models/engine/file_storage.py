@@ -11,7 +11,7 @@ class FileStorage():
     this class serializes instances to a JSON file
     and deserializes JSON file to instances
     """
-    __file_path = "/.file.json"
+    __file_path = "file.json"
     __objects = {}
 
     def all(self):
@@ -35,8 +35,11 @@ class FileStorage():
         """deserializes the JSON file to __objects"""
         try:
             with open(self.__file_path, "r") as f:
-                data = json.load(f)
-                for k in data:
-                    pass #TODO
+                dict_ = json.load(f)
+                for key, value in dict_.items():
+                    cls = key.split(".")[0]
+                    cls += '(**{})'.format(dict(value))
+                    new_obj = eval(cls)
+                    FileStorage.__objects[key] = new_obj
         except:
             pass

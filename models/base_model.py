@@ -5,6 +5,7 @@ This script has Base model class
 import models
 import uuid
 from datetime import datetime
+
 format = "%Y-%m-%dT%H:%M:%S.%f"
 
 
@@ -25,7 +26,6 @@ class BaseModel:
             self.created_at = datetime.now()
             self.updated_at = self.created_at
             models.storage.new(self)
-            models.storage.save()
 
     def __str__(self) -> str:
         """String presentation of BaseModel class"""
@@ -39,9 +39,7 @@ class BaseModel:
     def to_dict(self):
         """returns a dictionary containing all keys/values of __dict__ of the instance"""
         dict_upd = self.__dict__.copy()
-        if "created_at" in dict_upd:
-            dict_upd["created_at"] = dict_upd["created_at"].strftime(format)
-        if "updated_at" in dict_upd:
-            dict_upd["updated_at"] = dict_upd["updated_at"].strftime(format)
         dict_upd["__class__"] = self.__class__.__name__
+        dict_upd['created_at'] = datetime.isoformat(dict_upd['created_at'])
+        dict_upd['updated_at'] = datetime.isoformat(dict_upd['updated_at'])
         return dict_upd

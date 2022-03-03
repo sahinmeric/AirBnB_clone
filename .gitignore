@@ -1,5 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
+models/__pycache__
+test_base_model_dict.py
+file.json
 *.py[cod]
 *$py.class
 
