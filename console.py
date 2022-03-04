@@ -6,7 +6,6 @@ the command interpreter
 
 import cmd
 
-from click import prompt
 
 class HBNBCommand(cmd.Cmd):
     """ Command interpreter"""
@@ -21,6 +20,7 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()

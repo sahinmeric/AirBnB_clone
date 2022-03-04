@@ -4,7 +4,7 @@ This script has Base model class
 """
 import models
 import uuid
-from dt import dt as dt
+from datetime import datetime as dt
 
 format = "%Y-%m-%dT%H:%M:%S.%f"
 
