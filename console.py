@@ -8,13 +8,13 @@ import cmd
 
 
 class HBNBCommand(cmd.Cmd):
-    """ Command interpreter"""
+    """ Command line interpreter"""
     intro = ""
     prompt = "(hbtn) "
     file = None
 
     def do_EOF(self, arg):
-        """EOF"""
+        """EOF Quits from the program"""
         return True
 
     def do_quit(self, arg):
