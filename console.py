@@ -11,24 +11,28 @@ import sys
 
 class HBNBCommand(cmd.Cmd):
     """ Command line interpreter"""
-    prompt = "(hbtn) "
+    prompt = "(hbnb) "
     class_list = ['BaseModel', 'User', 'State', 'City',
                   'Amenity', 'Place', 'Review']
 
     def do_EOF(self, arg):
-        """EOF Quits from the program"""
+        """EOF Quits from the program
+        """
         return True
 
     def do_quit(self, arg):
-        """Quit command to exit the program"""
+        """Quit command to exit the program
+        """
         return True
 
     def emptyline(self):
-        """ empty line handle"""
+        """ empty line handle
+        """
         pass
 
     def do_create(self, arg):
-        """ creates an instance of given class"""
+        """ creates an instance of given class
+        """
         if arg:
             if arg in self.class_list:
                 print("Exists")  # TODO
