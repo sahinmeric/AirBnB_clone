@@ -7,6 +7,7 @@ the command interpreter
 
 import cmd
 import sys
+from models.base_model import BaseModel
 import models
 
 
@@ -36,7 +37,9 @@ class HBNBCommand(cmd.Cmd):
         """
         if arg:
             if arg in self.class_list:
-                print("Exists")  # TODO
+                new_instance = eval(arg + "()")
+                new_instance.save()
+                print(new_instance.id)
             else:
                 print("** class doesn't exist **")
         else:

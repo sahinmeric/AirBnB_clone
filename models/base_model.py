@@ -44,7 +44,7 @@ class BaseModel:
         of __dict__ of the instance
         """
         dict_upd = self.__dict__.copy()
-        dict_upd["__class__"] = self.__class__.__name__
-        dict_upd['created_at'] = dt.isoformat(dict_upd['created_at'])
-        dict_upd['updated_at'] = dt.isoformat(dict_upd['updated_at'])
+        dict_upd["__class__"] = type(self).__name__
+        dict_upd['created_at'] = self.__dict__['created_at'].isoformat()
+        dict_upd['updated_at'] = self.__dict__['updated_at'].isoformat()
         return dict_upd
