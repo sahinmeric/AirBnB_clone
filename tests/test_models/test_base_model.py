@@ -23,10 +23,10 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(type(bm.created_at), datetime)
         self.assertEqual(type(bm.updated_at), datetime)
         # int
-        md.num1 = 89
+        bm.num1 = 89
         self.assertTrue(hasattr(bm, "num1"))
         self.assertEqual(type(bm.num1), int)
         # str for name
-        md.nam1 = "Testing"
+        bm.nam1 = "Testing"
         self.assertTrue(hasattr(bm, "nam1"))
         self.assertEqual(type(bm.nam1), str)

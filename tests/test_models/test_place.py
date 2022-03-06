@@ -2,10 +2,11 @@
 """
 Unittest for place_model
 """
+from datetime import datetime
 import models
 import unittest
 from models.base_model import BaseModel
-from models.place_model import Place
+from models.place import Place
 
 
 class TestPlace(unittest.TestCase):
@@ -43,6 +44,6 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(type(pl.longitude), float)
         self.assertTrue(hasattr(pl, "amenity_ids"))
         self.assertEqual(type(pl.amenity_ids), list)
-        #check str
+        # check str
         self.assertEqual(str(pl), f'[Place] ({pl.id} \
                 {pl.__dict__}')

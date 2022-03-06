@@ -5,7 +5,7 @@ Unittest for city_model
 import models
 import unittest
 from models.base_model import BaseModel
-from models.city_model import City
+from models.city import City
 
 
 class TestCity(unittest.TestCase):
@@ -25,7 +25,7 @@ class TestCity(unittest.TestCase):
         self.assertTrue(hasattr(cty, "name"))
         self.assertIsInstance(cty.name, str)
 
-        #check str
+        # check str
         self.assertEqual(str(cty), f'[City] ({cty.id} \
                 {cty.__dict__}')
 
