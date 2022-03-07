@@ -26,9 +26,3 @@ class TestState(unittest.TestCase):
         #name check
         self.assertTrue(hasattr(stt, "name"))
         self.assertEqual(type(stt.name), str)
-
-    def testsave(self):
-        """test save method"""
-        stt1 = State()
-        stt1.save()
-        self.assertNotEqual(stt.created_at, stt.updated_at)

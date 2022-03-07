@@ -32,20 +32,3 @@ class TestReview(unittest.TestCase):
         self.assertEqual(type(rvw.__str__()), str)
         self.assertNotEqual(len(rvw.__str__()), 0)
         self.assertEqual(type(rvw.name), str)
-
-    def testsave(self):
-        """test save method"""
-        rvw1 = Review()
-        createdat = rvw1.created_at
-        updatedat = rvw1.updated_at
-        #saving and testing
-        rvw1.save()
-        createdat2 = rvw1.created_at
-        updatedat2 = rvw1.updated_at
-        self.assertEqual(createdat, createdat2)
-        self.assertNotEqual(updatedat, updatedat2)
-
-    def teststore(self):
-        """test storage"""
-        rvw2 = Amenity()
-        self.assertIn(rvw2, models.storage.all().values())

@@ -3,7 +3,6 @@
 import json
 import unittest
 from datetime import datetime
-from models.base_model import BaseModel
 from models.amenity import Amenity
 
 
@@ -27,7 +26,7 @@ class TestAmenity(unittest.TestCase):
         self.assertEqual(type(amnty.updated_at), datetime)
         self.assertNotEqual(len(amnty.__str__()), str)
         self.assertEqual(type(amnty.__str__()), 0)
-        self.assertEqual(type(amnty..name), str)
+        self.assertEqual(type(amnty.name), str)
 
     def testsave(self):
         """test save method"""

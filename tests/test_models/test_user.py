@@ -32,15 +32,3 @@ class TestUser(unittest.TestCase):
         # check str
         self.assertEqual(type(userr.__str__()), str)
         self.assertNotEqual(len(userr.__str__()), 0)
-
-    def testsave(self):
-        """test save method"""
-        user1 = User()
-        createdat = user1.created_at
-        updatedat = user1.updated_at
-        #saving and testing
-        user1.save()
-        createdat2 = user1.created_at
-        updatedat2 = user1.updated_at
-        self.assertEqual(createdat, createdat2)
-        self.assertNotEqual(updatedat, updatedat2)
