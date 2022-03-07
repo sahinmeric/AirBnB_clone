@@ -4,7 +4,7 @@ import json
 import unittest
 from datetime import datetime
 from models.amenity import Amenity
-import models
+from models import engine
 
 
 class TestAmenity(unittest.TestCase):
@@ -44,4 +44,4 @@ class TestAmenity(unittest.TestCase):
     def teststore(self):
         """test storage"""
         amnt2 = Amenity()
-        self.assertIn(amnt2, models.storage.all().values())
+        self.assertIn(amnt2, engine.storage.all().values())
