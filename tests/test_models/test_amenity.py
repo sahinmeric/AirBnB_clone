@@ -4,6 +4,7 @@ import json
 import unittest
 from datetime import datetime
 from models.amenity import Amenity
+import models
 
 
 class TestAmenity(unittest.TestCase):
