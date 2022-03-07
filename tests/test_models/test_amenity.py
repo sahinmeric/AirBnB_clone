@@ -29,19 +29,19 @@ class TestAmenity(unittest.TestCase):
         self.assertEqual(type(amnty.__str__()), 0)
         self.assertEqual(type(amnty.name), str)
 
-    def testsave(self):
-        """test save method"""
-        amnt1 = Amenity()
-        createdat = amnt1.created_at
-        updatedat = amnt1.updated_at
-        # saving and testing
-        amnt1.save()
-        createdat2 = amnt1.created_at
-        updatedat2 = amnt1.updated_at
-        self.assertEqual(createdat, createdat2)
-        self.assertNotEqual(updatedat, updatedat2)
+    # def testsave(self):
+    #     """test save method"""
+    #     amnt1 = Amenity()
+    #     createdat = amnt1.created_at
+    #     updatedat = amnt1.updated_at
+    #     # saving and testing
+    #     amnt1.save()
+    #     createdat2 = amnt1.created_at
+    #     updatedat2 = amnt1.updated_at
+    #     self.assertEqual(createdat, createdat2)
+    #     self.assertNotEqual(updatedat, updatedat2)
 
-    def teststore(self):
-        """test storage"""
-        amnt2 = Amenity()
-        self.assertIn(amnt2, engine.storage.all().values())
+    # def teststore(self):
+    #     """test storage"""
+    #     amnt2 = Amenity()
+    #     self.assertIn(amnt2, engine.storage.all().values())
