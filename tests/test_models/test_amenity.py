@@ -33,7 +33,7 @@ class TestAmenity(unittest.TestCase):
         amnt1 = Amenity()
         createdat = amnt1.created_at
         updatedat = amnt1.updated_at
-        #saving and testing
+        # saving and testing
         amnt1.save()
         createdat2 = amnt1.created_at
         updatedat2 = amnt1.updated_at

@@ -23,6 +23,6 @@ class TestState(unittest.TestCase):
         # datetime check
         self.assertEqual(type(stt.created_at), datetime)
         self.assertEqual(type(stt.updated_at), datetime)
-        #name check
+        # name check
         self.assertTrue(hasattr(stt, "name"))
         self.assertEqual(type(stt.name), str)
