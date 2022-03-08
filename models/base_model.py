@@ -19,7 +19,7 @@ class BaseModel:
                     setattr(self, k, v)
             if hasattr(self, "created_at"):
                 self.created_at = dt.strptime(kwargs["created_at"], format)
-            if hasattr(self, "updated_time"):
+            if hasattr(self, "updated_at"):
                 self.updated_at = dt.strptime(kwargs["updated_at"], format)
         else:
             self.id = str(uuid.uuid4())
