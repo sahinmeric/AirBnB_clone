@@ -25,9 +25,9 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = dt.now()
             self.updated_at = self.created_at
-            models.storage.new(self)
+        models.storage.new(self)
 
-    def __str__(self) -> str:
+    def __str__(self):
         """String presentation of BaseModel class"""
         return "[{}] ({}) {}".format(self.__class__.__name__,
                                      self.id, self.__dict__)
