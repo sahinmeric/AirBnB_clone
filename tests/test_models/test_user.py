@@ -10,14 +10,14 @@ from models.user import User
 class TestUser(unittest.TestCase):
     """class tests for user"""
 
-    def checkdocst(self):
+    def test_doc(self):
         """check docstring"""
         self.assertIsNotNone(User.__doc__)
         self.assertIsNotNone(User.save.__doc__)
         self.assertIsNotNone(User.to_dict.__doc__)
         self.assertIsNotNone(User.__str__.__doc__)
 
-    def createuser(self):
+    def test_user(self):
         """tests for user"""
         userr = User()
         self.assertEqual(type(userr), User)

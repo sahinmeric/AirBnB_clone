@@ -11,11 +11,11 @@ from models.place import Place
 
 class TestPlace(unittest.TestCase):
 
-    def checkdocst(self):
+    def test_docs(self):
         """check docstring"""
         self.assertIsNotNone(Place.__doc__)
 
-    def testplace(self):
+    def test_place(self):
         """check class and attrs"""
         pl = Place()
         self.assertIsInstance(pl, Place)
