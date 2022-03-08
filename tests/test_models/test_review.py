@@ -11,14 +11,14 @@ from models.review import Review
 class TestReview(unittest.TestCase):
     """class tests for review"""
 
-    def checkdocst(self):
+    def test_doc(self):
         """check docstring"""
         self.assertIsNotNone(Review.__doc__)
         self.assertIsNotNone(Review.save.__doc__)
         self.assertIsNotNone(Review.to_dict.__doc__)
         self.assertIsNotNone(Review.__str__.__doc__)
 
-    def creatervw(self):
+    def test_type(self):
         """tests for review"""
         rvw = Review()
         self.assertEqual(type(rvw), Review)
@@ -31,4 +31,3 @@ class TestReview(unittest.TestCase):
         self.assertEqual(type(rvw.text), str)
         self.assertEqual(type(rvw.__str__()), str)
         self.assertNotEqual(len(rvw.__str__()), 0)
-        self.assertEqual(type(rvw.name), str)
