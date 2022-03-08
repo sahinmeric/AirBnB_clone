@@ -10,11 +10,11 @@ from models.state import State
 class TestState(unittest.TestCase):
     """class tests for state"""
 
-    def checkdocst(self):
+    def test_doc(self):
         """check docstring"""
         self.assertIsNotNone(State.__doc__)
 
-    def createstt(self):
+    def test_type(self):
         """tests for state"""
         stt = State()
         self.assertIsInstance(stt, State)
