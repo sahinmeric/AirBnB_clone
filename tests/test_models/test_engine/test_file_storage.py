@@ -36,5 +36,5 @@ class TestFileStorage(unittest.TestCase):
         ex = os.access("models/engine/file_storage.py", os.X_OK)
         self.assertFalse(ex, "Execute permission is True")
 
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    unittest.main()
